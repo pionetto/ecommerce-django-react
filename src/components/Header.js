@@ -1,13 +1,7 @@
 import React from 'react'
 
 import {Navbar, Nav, Container, Row} from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
-//import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-//import Nav from 'react-bootstrap/Nav';
-//import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+import { LinkContainer } from 'react-router-bootstrap'
 
 function Header() {
   return (
@@ -16,12 +10,22 @@ function Header() {
 
           <Navbar bg="dark" variant="dark" expand="lg" coLLapseOnSelect className="mb-3">
               <Container fluid>
-                <Navbar.Brand href="/">ProShop</Navbar.Brand>
+                <LinkContainer to='/'>
+                  <Navbar.Brand>ProShop</Navbar.Brand>
+                </LinkContainer>
+                
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" placement="start">
                     <Nav className="mr-auto">
-                      <Nav.Link href="/cart"><i className="fas fa-shopping-cart"> </i> Cart</Nav.Link>
-                      <Nav.Link href="/login"><i className="fas fa-user"> </i>Login</Nav.Link>
+
+                      <LinkContainer to='/cart'>
+                        <Nav.Link><i className="fas fa-shopping-cart"> </i> Cart</Nav.Link>
+                      </LinkContainer>
+
+                      <LinkContainer to='/login'>
+                        <Nav.Link><i className="fas fa-user"> </i>Login</Nav.Link>
+                      </LinkContainer>
+
                     </Nav>
                 </Navbar.Collapse>
               </Container>
